@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { company } from "@/data/company"
+import { sendEnquiry } from "@/lib/sendEnquiry"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
@@ -26,6 +27,7 @@ type ContactFormValues = z.infer<typeof contactSchema>
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const formRef = useRef<HTMLFormElement>(null)
   const {
     register,
@@ -61,8 +63,13 @@ export function ContactPage() {
   )
 
   const onSubmit = handleSubmit(async (values) => {
-    await new Promise((resolve) => setTimeout(resolve, 600))
-    console.info("GRS enquiry", values)
+    setSubmitError("")
+    setSubmitted(false)
+    const result = await sendEnquiry(values)
+    if (!result.ok) {
+      setSubmitError(result.error)
+      return
+    }
     setSubmitted(true)
     reset()
   })
@@ -209,9 +216,10 @@ export function ContactPage() {
               </Button>
               {submitted ? (
                 <p className="mt-3 text-sm font-medium text-ink-soft">
-                  Thanks — your enquiry is ready. Call +91 {company.phones[0]} for fastest response.
+                  Thanks — your enquiry was sent to {company.email}. We will get back to you shortly.
                 </p>
               ) : null}
+              {submitError ? <p className="mt-3 text-sm font-medium text-brand">{submitError}</p> : null}
             </form>
           </Reveal>
         </div>
