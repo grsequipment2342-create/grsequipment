@@ -4,6 +4,7 @@ import { BackToTop } from "@/components/layout/backToTop"
 import { FloatingContact } from "@/components/layout/floatingContact"
 import { SiteFooter } from "@/components/layout/siteFooter"
 import { SiteHeader } from "@/components/layout/siteHeader"
+import { SeoHead } from "@/components/seo/seoHead"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useEffect, useRef } from "react"
@@ -36,6 +37,7 @@ export function SiteLayout() {
 
   return (
     <div className="flex min-h-dvh flex-col overflow-x-clip">
+      <SeoHead />
       <ScrollProgress />
       <SiteHeader />
       <main className="flex-1 pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0">

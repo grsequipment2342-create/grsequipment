@@ -11,8 +11,8 @@ export function AboutPage() {
     <>
       <PageBanner
         eyebrow="About Us / 关于我们"
-        title={company.tradeName}
-        subtitle={company.tagline}
+        title="GRS Equipments — STETON Dealer India"
+        subtitle={`${company.tagline}. HDD & trenchless sales, spare parts and service from Navi Mumbai.`}
       />
 
       <section className="bg-paper py-16 md:py-20">

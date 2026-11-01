@@ -36,8 +36,10 @@ export function SiteFooter() {
     <footer ref={footerRef} className="bg-ink text-white pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
         <div className="footer-col">
-          <div className="font-display text-xl font-bold tracking-wide">{company.shortName}</div>
-          <p className="mt-2 text-sm text-white/65">{company.tagline}</p>
+          <div className="font-display text-xl font-bold tracking-wide">GRS Equipments</div>
+          <p className="mt-2 text-sm text-white/65">
+            India authorized dealer for STETON HDD machines — trenchless drilling sales &amp; service.
+          </p>
           <p className="mt-4 text-xs uppercase tracking-[0.18em] text-brand-light">
             STETON 思特通 · Built for Indian infrastructure
           </p>

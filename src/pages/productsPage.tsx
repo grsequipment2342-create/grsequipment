@@ -59,8 +59,8 @@ export function ProductsPage() {
     <>
       <PageBanner
         eyebrow="Products / 产品中心"
-        title="STETON Product Line"
-        subtitle="Full catalog from GRS — HDD rigs, mud pumps, hybrid power and trenchless tooling with bilingual specifications."
+        title="Best HDD Machine — STETON / Steton"
+        subtitle="Full STETON / Steton HDD machine catalog from GRS Equipments India — best HDD machine range, mud pumps, hybrid power and trenchless tooling with bilingual specifications."
       />
 
       <section className="bg-paper py-12 md:py-16">

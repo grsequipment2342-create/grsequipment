@@ -71,8 +71,8 @@ export function ContactPage() {
     <>
       <PageBanner
         eyebrow="Contact Us / 联系我们"
-        title="Talk to GRS"
-        subtitle="Showroom in Ghansoli & warehouse in Mahape, Navi Mumbai — call us for STETON HDD machines, mud systems, tooling and trenchless support."
+        title="Contact GRS Equipments"
+        subtitle="Showroom in Ghansoli & warehouse in Mahape, Navi Mumbai — call GRS Equipments for STETON HDD machines, mud systems, tooling and trenchless support across India."
       />
 
       <section className="relative overflow-hidden">

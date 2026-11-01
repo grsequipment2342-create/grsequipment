@@ -172,11 +172,11 @@ export function HomePage() {
         <div className="hero-brand-bar absolute inset-x-0 bottom-0 z-10">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 pb-4 pt-3 safe-px sm:flex-row sm:items-end sm:justify-between sm:pb-5 lg:px-6">
             <div className="max-w-md text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
-              <p className="font-display text-[9px] font-semibold uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.26em] md:text-xs">
-                GRS · STETON 思特通 · India
-              </p>
+              <h1 className="font-display text-[9px] font-semibold uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.26em] md:text-xs">
+                GRS Equipments · Best HDD Machine · STETON / Steton
+              </h1>
               <p className="mt-1 text-[11px] leading-snug text-white/95 sm:text-xs md:text-sm">
-                Horizontal Directional Drilling — Navi Mumbai
+                Authorized STETON / Steton HDD machine dealer — Navi Mumbai, India
               </p>
             </div>
             <div className="flex w-full flex-wrap gap-2 sm:w-auto">
@@ -205,7 +205,7 @@ export function HomePage() {
               <div className="flex items-center gap-3">
                 <span className="h-7 w-1 shrink-0 bg-brand sm:h-8" aria-hidden />
                 <h2 className="font-display text-lg font-bold uppercase tracking-[0.12em] text-ink sm:text-xl sm:tracking-[0.14em] md:text-2xl">
-                  Products
+                  Best HDD Machine — STETON / Steton
                 </h2>
               </div>
               <Link
@@ -291,8 +291,13 @@ export function HomePage() {
       <section ref={aboutRef} className="overflow-hidden bg-surface py-16 md:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-2 lg:px-6">
           <Reveal>
-            <h2 className="section-title text-2xl md:text-3xl">About GRS</h2>
-            <p className="mt-5 text-base leading-relaxed text-ink-soft">{company.about.english}</p>
+            <h2 className="section-title text-2xl md:text-3xl">About GRS Equipments</h2>
+            <p className="mt-5 text-base leading-relaxed text-ink-soft">
+              GRS Equipments and Services LLP is the India authorized dealer for STETON / Steton (思特通) — trusted for the
+              best HDD machine options, horizontal directional drilling machines, mud systems, tooling and trenchless
+              support from Navi Mumbai.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-ink-soft">{company.about.english}</p>
             <p className="mt-4 text-sm leading-relaxed text-muted">{company.about.chinese}</p>
             <div className="mt-8">
               <ProcessStrip />

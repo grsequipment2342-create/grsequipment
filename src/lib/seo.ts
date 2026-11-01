@@ -1,0 +1,344 @@
+import { company } from "@/data/company"
+import { products } from "@/data/products"
+import { DEFAULT_OG_IMAGE, SITE_BRAND, SITE_NAME, SITE_URL } from "@/lib/siteConfig"
+
+type JsonLdPrimitive = string | number | boolean | null
+type JsonLdValue = JsonLdPrimitive | JsonLdValue[] | { [key: string]: JsonLdValue }
+type JsonLdObject = { [key: string]: JsonLdValue }
+
+export type PageSeoConfig = {
+  title: string
+  description: string
+  path: string
+  keywords?: string
+  image?: string
+  type?: "website" | "article" | "product"
+  noIndex?: boolean
+  jsonLd?: JsonLdObject[]
+}
+
+const brandKeywords =
+  "HDD machine, Best HDD machine, Best HDD machine India, STETON, Steton, STETON HDD, STETON HDD machine, GRS Equipments, GRS Equipments and Services, GRS Equipment, STETON India, 思特通, horizontal directional drilling, HDD machine India, trenchless drilling Navi Mumbai, HDD rig dealer India"
+
+export const defaultSeo: PageSeoConfig = {
+  title: `${SITE_NAME} | Best HDD Machine — STETON / Steton India Dealer`,
+  description:
+    "Looking for the best HDD machine in India? GRS Equipments is the authorized STETON / Steton dealer for horizontal directional drilling machines — HDD machine sales, mud pumps, tooling and trenchless support from Navi Mumbai.",
+  path: "/",
+  keywords: brandKeywords,
+  image: DEFAULT_OG_IMAGE,
+  type: "website",
+}
+
+const staticPages: Record<string, Omit<PageSeoConfig, "path">> = {
+  "/": {
+    title: defaultSeo.title,
+    description: defaultSeo.description,
+    keywords: brandKeywords,
+  },
+  "/about": {
+    title: `About ${SITE_NAME} | India Authorized ${SITE_BRAND} Dealer`,
+    description:
+      "Learn about GRS Equipments and Services LLP — India authorized STETON Engineering Machinery dealer for HDD and trenchless projects from Navi Mumbai, with branches across India.",
+    keywords: `${brandKeywords}, about GRS Equipments, STETON dealer India`,
+  },
+  "/products": {
+    title: `Best HDD Machine Catalog | STETON / Steton — ${SITE_NAME}`,
+    description:
+      "Browse the best HDD machine range from STETON / Steton at GRS Equipments — S60, S200, S350, S450, S520, S600A, S800A, S1350, ST2200, ST3800, mud pumps and drill tools in India.",
+    keywords: `${brandKeywords}, STETON S200, STETON S350, STETON catalog, HDD products India, best HDD machine`,
+  },
+  "/service": {
+    title: `HDD Service & Consultancy | ${SITE_NAME} × ${SITE_BRAND}`,
+    description:
+      "GRS Equipments provides STETON HDD after-sales service, spare parts, training and trenchless technical consultancy across India.",
+    keywords: `${brandKeywords}, HDD service India, STETON spare parts, trenchless consultancy`,
+  },
+  "/gallery": {
+    title: `${SITE_BRAND} Machines Gallery | ${SITE_NAME}`,
+    description:
+      "Photo gallery of STETON HDD machines, accessories and GRS Equipments field work across India.",
+    keywords: `${brandKeywords}, STETON machine photos, HDD gallery`,
+  },
+  "/knowledge": {
+    title: `HDD Knowledge Guide | ${SITE_NAME} & ${SITE_BRAND}`,
+    description:
+      "Understand horizontal directional drilling with GRS Equipments — characteristics of HDD and STETON rig structure for Indian utility projects.",
+    keywords: `${brandKeywords}, what is HDD, trenchless technology India`,
+  },
+  "/news": {
+    title: `News & Events | ${SITE_NAME} · ${SITE_BRAND}`,
+    description:
+      "Latest news from GRS Equipments and STETON — trenchless exhibitions, awards and HDD industry updates in India.",
+    keywords: `${brandKeywords}, STETON news, trenchless India news`,
+  },
+  "/download": {
+    title: `Download ${SITE_BRAND} Catalog | ${SITE_NAME}`,
+    description:
+      "Download the GRS × STETON product catalog and request HDD datasheets from GRS Equipments India.",
+    keywords: `${brandKeywords}, STETON catalog PDF, HDD brochure download`,
+  },
+  "/contact": {
+    title: `Contact ${SITE_NAME} | ${SITE_BRAND} HDD Dealer Navi Mumbai`,
+    description:
+      "Contact GRS Equipments for STETON HDD machines — Show Room Sector-16 Ghansoli, Navi Mumbai. Call +91 8655886888 / 8922805992 or email info@grsequipment.in.",
+    keywords: `${brandKeywords}, GRS Equipments contact, STETON dealer Navi Mumbai, Ghansoli HDD`,
+  },
+}
+
+function absoluteUrl(path: string): string {
+  if (path.startsWith("http")) return path
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`
+}
+
+function organizationJsonLd(): JsonLdObject {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "@id": `${SITE_URL}/#organization`,
+    name: company.legalName,
+    alternateName: ["GRS Equipments", "GRS Equipments and Services", "GRS Equipment", "STETON India Dealer"],
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.svg`,
+    image: DEFAULT_OG_IMAGE,
+    email: company.email,
+    telephone: company.phones.map((p) => `+91${p}`),
+    vatID: company.gstin,
+    slogan: company.tagline,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: company.address.line1,
+      addressLocality: company.address.city,
+      addressRegion: company.address.state,
+      postalCode: company.address.pin,
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 19.1197,
+      longitude: 73.0054,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    brand: {
+      "@type": "Brand",
+      name: "STETON",
+      alternateName: "思特通",
+    },
+    sameAs: [`https://${company.website}`],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: `+91-${company.phones[0]}`,
+        contactType: "sales",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: `+91-${company.phones[1]}`,
+        contactType: "customer service",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
+      },
+    ],
+  }
+}
+
+function websiteJsonLd(): JsonLdObject {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: `${SITE_NAME} | ${SITE_BRAND} HDD India`,
+    description: defaultSeo.description,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "en-IN",
+  }
+}
+
+export function resolvePageSeo(pathname: string): PageSeoConfig {
+  const productMatch = pathname.match(/^\/products\/([^/]+)\/?$/)
+  if (productMatch) {
+    const slug = productMatch[1]
+    const product = products.find((p) => p.slug === slug)
+    if (product) {
+      const title = `${product.model} STETON / Steton HDD Machine | ${SITE_NAME}`
+      const description = `${product.model} STETON / Steton HDD machine — ${product.nameEn} from GRS Equipments India. Best HDD machine option for trenchless projects. ${product.summary}`
+      return {
+        title,
+        description,
+        path: `/products/${product.slug}`,
+        keywords: `${product.model}, STETON ${product.model}, Steton ${product.model}, HDD machine, best HDD machine, ${product.nameEn}, GRS Equipments, STETON HDD, ${brandKeywords}`,
+        image: absoluteUrl(product.image),
+        type: "product",
+        jsonLd: [
+          organizationJsonLd(),
+          websiteJsonLd(),
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: `${SITE_BRAND} ${product.model} ${product.nameEn}`,
+            model: product.model,
+            description: product.summary,
+            image: absoluteUrl(product.image),
+            brand: { "@type": "Brand", name: "STETON" },
+            sku: product.model,
+            category: "Horizontal Directional Drilling Machine",
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              priceCurrency: "INR",
+              url: absoluteUrl(`/products/${product.slug}`),
+              seller: { "@id": `${SITE_URL}/#organization` },
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: product.model,
+                item: absoluteUrl(`/products/${product.slug}`),
+              },
+            ],
+          },
+        ],
+      }
+    }
+  }
+
+  const normalized = pathname.replace(/\/$/, "") || "/"
+  const page = staticPages[normalized] ?? {
+    title: defaultSeo.title,
+    description: defaultSeo.description,
+    keywords: brandKeywords,
+  }
+
+  const crumbName = page.title.split("|")[0]?.trim() ?? "Page"
+
+  return {
+    ...page,
+    path: normalized,
+    image: page.image ?? DEFAULT_OG_IMAGE,
+    type: page.type ?? "website",
+    jsonLd: [
+      organizationJsonLd(),
+      websiteJsonLd(),
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement:
+          normalized === "/"
+            ? [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }]
+            : [
+                { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: crumbName,
+                  item: absoluteUrl(normalized),
+                },
+              ],
+      },
+    ],
+  }
+}
+
+function upsertMeta(selector: string, attributes: Record<string, string>): void {
+  const existing = document.head.querySelector(selector)
+  const el = existing instanceof HTMLMetaElement ? existing : document.createElement("meta")
+  if (!(existing instanceof HTMLMetaElement)) {
+    document.head.appendChild(el)
+  }
+  Object.entries(attributes).forEach(([key, value]) => {
+    el.setAttribute(key, value)
+  })
+}
+
+function upsertLink(rel: string, href: string): void {
+  const existing = document.head.querySelector(`link[rel="${rel}"]`)
+  const el = existing instanceof HTMLLinkElement ? existing : document.createElement("link")
+  if (!(existing instanceof HTMLLinkElement)) {
+    el.setAttribute("rel", rel)
+    document.head.appendChild(el)
+  }
+  el.setAttribute("href", href)
+}
+
+function upsertJsonLd(blocks: JsonLdObject[]): void {
+  document.head.querySelectorAll('script[data-seo-jsonld="true"]').forEach((node) => node.remove())
+  blocks.forEach((block) => {
+    const script = document.createElement("script")
+    script.type = "application/ld+json"
+    script.setAttribute("data-seo-jsonld", "true")
+    script.textContent = JSON.stringify(block)
+    document.head.appendChild(script)
+  })
+}
+
+/** Apply document title, meta tags, canonical URL and JSON-LD for the current route. */
+export function applyPageSeo(config: PageSeoConfig): void {
+  const url = absoluteUrl(config.path)
+  const image = config.image ? absoluteUrl(config.image) : DEFAULT_OG_IMAGE
+
+  document.title = config.title
+
+  upsertMeta('meta[name="description"]', { name: "description", content: config.description })
+  upsertMeta('meta[name="keywords"]', {
+    name: "keywords",
+    content: config.keywords ?? brandKeywords,
+  })
+  upsertMeta('meta[name="author"]', { name: "author", content: company.legalName })
+  upsertMeta('meta[name="robots"]', {
+    name: "robots",
+    content: config.noIndex ? "noindex,nofollow" : "index,follow,max-image-preview:large",
+  })
+  upsertMeta('meta[name="googlebot"]', {
+    name: "googlebot",
+    content: config.noIndex ? "noindex,nofollow" : "index,follow",
+  })
+
+  upsertMeta('meta[property="og:type"]', { property: "og:type", content: config.type ?? "website" })
+  upsertMeta('meta[property="og:site_name"]', { property: "og:site_name", content: SITE_NAME })
+  upsertMeta('meta[property="og:locale"]', { property: "og:locale", content: "en_IN" })
+  upsertMeta('meta[property="og:title"]', { property: "og:title", content: config.title })
+  upsertMeta('meta[property="og:description"]', {
+    property: "og:description",
+    content: config.description,
+  })
+  upsertMeta('meta[property="og:url"]', { property: "og:url", content: url })
+  upsertMeta('meta[property="og:image"]', { property: "og:image", content: image })
+
+  upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" })
+  upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: config.title })
+  upsertMeta('meta[name="twitter:description"]', {
+    name: "twitter:description",
+    content: config.description,
+  })
+  upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: image })
+
+  upsertMeta('meta[name="geo.region"]', { name: "geo.region", content: "IN-MH" })
+  upsertMeta('meta[name="geo.placename"]', {
+    name: "geo.placename",
+    content: "Navi Mumbai, Maharashtra",
+  })
+
+  upsertLink("canonical", url)
+  upsertJsonLd(config.jsonLd ?? [organizationJsonLd(), websiteJsonLd()])
+}
