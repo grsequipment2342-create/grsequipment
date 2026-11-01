@@ -243,7 +243,7 @@ export const testimonials = [
     quote: "Extremely happy with services and support.",
   },
   {
-    name: "Mr. Mayank Tripathi",
+    name: "Mr. Mayank",
     company: "HDD Contractor",
     place: "Raipur",
     machines: "33/66 ton",

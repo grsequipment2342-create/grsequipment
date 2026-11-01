@@ -70,17 +70,6 @@ export const company = {
       phones: ["8655886888", "8922805992"],
     },
   ],
-  partners: [
-    { name: "Sudha Tripathi", status: "Partner", state: "Maharashtra" },
-    { name: "Shyam Jaibhihari Tripathi", status: "Partner", state: "Uttar Pradesh" },
-  ],
-  leadership: [
-    {
-      name: "Krishna Tripathi",
-      role: "Management / HDD Operations",
-      image: "/images/grs/machines/009-27efcfe7-8f91-4797-bf22-e2f8c01ba107.jpg",
-    },
-  ],
   values: [
     "Quality | Reliability | Performance",
     "High Performance",

@@ -220,29 +220,6 @@ export function AboutPage() {
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="section-title text-2xl">Designated Partners</h2>
-            <StaggerChildren className="mt-5 grid gap-4">
-              {company.partners.map((partner) => (
-                <div key={partner.name} className="border border-line bg-paper p-5">
-                  <div className="font-display text-lg font-bold tracking-wide">{partner.name}</div>
-                  <div className="mt-1 text-sm uppercase tracking-wide text-brand">{partner.status}</div>
-                  <div className="mt-2 text-sm text-muted">Resident of {partner.state}</div>
-                </div>
-              ))}
-            </StaggerChildren>
-            <div className="mt-4 flex items-center gap-4 border border-line bg-paper p-4">
-              <img
-                src={company.leadership[0].image}
-                alt={company.leadership[0].name}
-                className="h-16 w-16 object-cover"
-              />
-              <div>
-                <div className="font-bold">{company.leadership[0].name}</div>
-                <div className="text-xs uppercase tracking-wide text-brand">{company.leadership[0].role}</div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
 
