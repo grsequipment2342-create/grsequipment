@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="8" fill="#C62828"/>
+  <path d="M12 40 L32 16 L52 40" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="22" y="36" width="20" height="12" rx="2" fill="#fff"/>
+  <text x="32" y="46" text-anchor="middle" fill="#C62828" font-family="Arial Black, sans-serif" font-size="9" font-weight="700">GRS</text>
+</svg>
