@@ -63,7 +63,8 @@ export function SiteFooter() {
           <h3 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white/50">SEO Guides</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             <li><Link to="/hdd-machines-india" className="hover:text-brand-light">HDD Machines India</Link></li>
-            <li><Link to="/horizontal-directional-drilling" className="hover:text-brand-light">Horizontal Directional Drilling</Link></li>
+            <li><Link to="/horizontal-directional-drilling-machines" className="hover:text-brand-light">Horizontal Directional Drilling</Link></li>
+            <li><Link to="/steton-hdd-machines" className="hover:text-brand-light">Steton HDD Machines</Link></li>
             <li><Link to="/hdd-machines-mumbai" className="hover:text-brand-light">HDD Near Mumbai</Link></li>
             <li><Link to="/pipe-laying-machines" className="hover:text-brand-light">Pipe Laying Machines</Link></li>
             <li><Link to="/cable-laying-machines" className="hover:text-brand-light">Cable Laying Machines</Link></li>

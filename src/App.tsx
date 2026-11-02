@@ -46,6 +46,10 @@ export default function App() {
             {seoPagePaths.map((path) => (
               <Route key={path} path={path.slice(1)} element={<SeoLandingPage />} />
             ))}
+            <Route
+              path="horizontal-directional-drilling"
+              element={<Navigate to="/horizontal-directional-drilling-machines" replace />}
+            />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

@@ -22,11 +22,11 @@ const brandKeywords =
   "HDD machine, Best HDD machine, Best HDD machine India, STETON, Steton, STETON HDD, STETON HDD machine, GRS Equipments, GRS Equipments and Services, GRS Equipment, STETON India, 思特通, horizontal directional drilling, HDD machine India, trenchless drilling Navi Mumbai, HDD rig dealer India"
 
 export const defaultSeo: PageSeoConfig = {
-  title: "Steton HDD Machines India | Horizontal Directional Drilling Machines & Parts",
+  title: "GRS Equipment | Steton HDD Machines & Drilling Equipment India",
   description:
-    "Explore Steton HDD machines, horizontal directional drilling machines, pipe laying equipment, cable laying machines and HDD machine parts in India. Contact GRS Equipments for enquiries and quotations.",
+    "Explore HDD machines, Steton drilling equipment, horizontal directional drilling solutions, HDD machine spare parts, pipe laying and cable laying equipment at GRS Equipment, India.",
   path: "/",
-  keywords: "Steton, Steton HDD Machine, HDD machines India, GRS Equipments, horizontal directional drilling",
+  keywords: "Steton, Steton HDD Machine, HDD machines India, GRS Equipment, horizontal directional drilling",
   image: DEFAULT_OG_IMAGE,
   type: "website",
 }
@@ -38,16 +38,16 @@ const staticPages: Record<string, Omit<PageSeoConfig, "path">> = {
     keywords: defaultSeo.keywords,
   },
   "/about": {
-    title: `About ${SITE_NAME} | India Authorized ${SITE_BRAND} Dealer`,
+    title: "About GRS Equipment | HDD Equipment Solutions India",
     description:
-      "Learn about GRS Equipments and Services LLP — India authorized STETON Engineering Machinery dealer for HDD and trenchless projects from Navi Mumbai, with branches across India.",
-    keywords: `${brandKeywords}, about GRS Equipments, STETON dealer India`,
+      "Learn about GRS Equipment, our business, equipment solutions and commitment to serving the drilling and infrastructure industry from Navi Mumbai.",
+    keywords: `${brandKeywords}, about GRS Equipment, HDD equipment India`,
   },
   "/products": {
-    title: `Best HDD Machine Catalog | STETON / Steton — ${SITE_NAME}`,
+    title: "HDD Machines & Drilling Equipment | GRS Equipment India",
     description:
-      "Browse the best HDD machine range from STETON / Steton at GRS Equipments — S60, S200, S350, S450, S520, S600A, S800A, S1350, ST2200, ST3800, mud pumps and drill tools in India.",
-    keywords: `${brandKeywords}, STETON S200, STETON S350, STETON catalog, HDD products India, best HDD machine`,
+      "Explore HDD drilling machines, directional drilling equipment and machinery solutions for telecom, infrastructure and underground cable installation.",
+    keywords: `${brandKeywords}, STETON catalog, HDD products India`,
   },
   "/service": {
     title: `HDD Service & Consultancy | ${SITE_NAME} × ${SITE_BRAND}`,
@@ -80,10 +80,10 @@ const staticPages: Record<string, Omit<PageSeoConfig, "path">> = {
     keywords: `${brandKeywords}, STETON catalog PDF, HDD brochure download`,
   },
   "/contact": {
-    title: `Contact ${SITE_NAME} | ${SITE_BRAND} HDD Dealer Navi Mumbai`,
+    title: "Contact GRS Equipment | HDD Machines & Parts Mumbai",
     description:
-      "Contact GRS Equipments for STETON HDD machines — Show Room Sector-16 Ghansoli, Navi Mumbai. Call +91 8655886888 / 8922805992 or email grsequipments2023@gmail.com.",
-    keywords: `${brandKeywords}, GRS Equipments contact, STETON dealer Navi Mumbai, Ghansoli HDD`,
+      "Contact GRS Equipment for enquiries about HDD machines, drilling equipment, spare parts and infrastructure equipment solutions in Mumbai / Navi Mumbai.",
+    keywords: `${brandKeywords}, GRS Equipment contact, HDD parts Mumbai, Ghansoli HDD`,
   },
 }
 
@@ -197,13 +197,7 @@ export function resolvePageSeo(pathname: string): PageSeoConfig {
             brand: { "@type": "Brand", name: "STETON" },
             sku: product.model,
             category: "Horizontal Directional Drilling Machine",
-            offers: {
-              "@type": "Offer",
-              availability: "https://schema.org/InStock",
-              priceCurrency: "INR",
-              url: absoluteUrl(`/products/${product.slug}`),
-              seller: { "@id": `${SITE_URL}/#organization` },
-            },
+            url: absoluteUrl(`/products/${product.slug}`),
           },
           {
             "@context": "https://schema.org",

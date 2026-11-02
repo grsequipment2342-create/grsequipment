@@ -212,8 +212,11 @@ export function HomePage() {
             <Link to="/hdd-machines-india" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
               HDD Machines India
             </Link>
-            <Link to="/horizontal-directional-drilling" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+            <Link to="/horizontal-directional-drilling-machines" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
               Horizontal Directional Drilling
+            </Link>
+            <Link to="/steton-hdd-machines" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Steton HDD Machines
             </Link>
             <Link to="/hdd-machine-parts" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
               HDD Machine Parts

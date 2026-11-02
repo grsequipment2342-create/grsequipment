@@ -23,11 +23,11 @@ export type SeoPageContent = {
 export const seoPages: SeoPageContent[] = [
   {
     path: "/hdd-machines-india",
-    title: "HDD Machine in India | Best HDD Machine in India — STETON by GRS",
+    title: "HDD Machine in India | Best HDD Machine Options — GRS Equipments",
     description:
-      "Buy the best HDD machine in India from GRS Equipments — authorized STETON dealer for horizontal directional drilling machines, trenchless projects and after-sales support.",
+      "Explore HDD machines in India from GRS Equipments — STETON horizontal directional drilling machines for trenchless projects, with Navi Mumbai showroom support and pan-India coordination.",
     keywords: "HDD Machine in India, Best HDD Machine in India, STETON HDD, GRS Equipments",
-    h1: "Best HDD Machine in India — STETON Horizontal Directional Drilling",
+    h1: "HDD Machines in India for Trenchless Utility Projects",
     intro:
       "Looking for a reliable HDD machine in India? GRS Equipments supplies STETON horizontal directional drilling machines for municipal water, telecom, power and oil & gas crossings — with showroom support from Navi Mumbai and branch coordination across India.",
     image: "/images/grs/machines/009-27efcfe7-8f91-4797-bf22-e2f8c01ba107.jpg",
@@ -40,8 +40,8 @@ export const seoPages: SeoPageContent[] = [
     ],
     highlights: [
       {
-        title: "Authorized STETON supply",
-        body: "GRS is the India channel for STETON HDD rigs — from compact S-series to heavy ST models for longer, deeper bores.",
+        title: "STETON HDD supply",
+        body: "GRS Equipments offers STETON HDD rigs — from compact S-series to heavy ST models for longer, deeper bores — with local sales and support.",
       },
       {
         title: "Project-fit selection",
@@ -70,20 +70,20 @@ export const seoPages: SeoPageContent[] = [
           "Yes. GRS Equipments supplies STETON HDD machines nationwide with primary stocking and showroom support from Navi Mumbai.",
       },
     ],
-    relatedPaths: ["/horizontal-directional-drilling", "/hdd-machine-parts", "/hdd-machines-mumbai", "/products"],
+    relatedPaths: ["/horizontal-directional-drilling-machines", "/steton-hdd-machines", "/hdd-machine-parts", "/products"],
     ctaNote: "Ask GRS for a STETON HDD machine quotation matched to your Indian project site.",
   },
   {
-    path: "/horizontal-directional-drilling",
-    title: "Horizontal Directional Drilling Machine | STETON HDD by GRS India",
+    path: "/horizontal-directional-drilling-machines",
+    title: "Horizontal Directional Drilling Machines | GRS Equipments India",
     description:
-      "Horizontal directional drilling machines from STETON via GRS Equipments — trenchless HDD for pipe, cable and utility installation without open-cut disruption.",
-    keywords: "Horizontal Directional Drilling Machine, HDD, trenchless drilling, STETON",
+      "Horizontal directional drilling machines from GRS Equipments — STETON HDD solutions for trenchless pipe, cable and utility installation across India.",
+    keywords: "Horizontal Directional Drilling Machine, HDD, trenchless drilling, STETON, Directional Drilling Equipment",
     h1: "Horizontal Directional Drilling Machines for Trenchless Projects",
     intro:
-      "Horizontal directional drilling (HDD) installs pipes and cables along a controlled underground path. STETON HDD machines from GRS Equipments are built for steerable bores under roads, rivers and built-up areas with less surface disruption than open cut.",
+      "Horizontal directional drilling (HDD) installs pipes and cables along a controlled underground path. STETON HDD machines available through GRS Equipments support steerable bores under roads, rivers and built-up areas with less surface disruption than open cut.",
     image: "/images/grs/machines/013-3894871d-6ffd-4f61-affd-91d90fe0688f.jpg",
-    imageAlt: "Horizontal directional drilling machine STETON at work site",
+    imageAlt: "Horizontal directional drilling machine for trenchless utility installation",
     applications: [
       "Guided pilot bore and reaming cycles",
       "Product pipe pullback for HDPE / steel",
@@ -108,7 +108,7 @@ export const seoPages: SeoPageContent[] = [
       { label: "Process", value: "Pilot bore → ream → pullback" },
       { label: "Machine range", value: "Compact to heavy STETON HDD fleet" },
       { label: "Complementary gear", value: "Mud pumps, drill tools, rods, tracks" },
-      { label: "Dealer", value: "GRS Equipments — STETON India" },
+      { label: "Supplier", value: "GRS Equipments — Navi Mumbai, India" },
     ],
     faqs: [
       {
@@ -122,8 +122,60 @@ export const seoPages: SeoPageContent[] = [
           "Yes. We advise on rods, bits, housings and reamers based on soil and bore design, alongside the STETON machine recommendation.",
       },
     ],
-    relatedPaths: ["/hdd-machines-india", "/pipe-laying-machines", "/cable-laying-machines", "/knowledge"],
+    relatedPaths: ["/hdd-machines-india", "/steton-hdd-machines", "/pipe-laying-machines", "/cable-laying-machines"],
     ctaNote: "Talk to GRS about the right horizontal directional drilling machine for your crossing.",
+  },
+  {
+    path: "/steton-hdd-machines",
+    title: "Steton HDD Machines India | STETON Drilling Equipment — GRS",
+    description:
+      "Explore Steton HDD machines and STETON drilling equipment at GRS Equipments India — model range, applications, parts support and enquiry options from Navi Mumbai.",
+    keywords: "Steton HDD Machine, Steton Machine, STETON HDD, Steton, GRS Equipments",
+    h1: "Steton HDD Machines and STETON Drilling Equipment in India",
+    intro:
+      "Contractors searching for Steton HDD machines can review the STETON range available through GRS Equipments. From compact S-series units to heavier ST models, we help match thrust, torque and tooling to Indian trenchless projects — with showroom discussion in Navi Mumbai.",
+    image: "/images/products/cards/s200.jpg",
+    imageAlt: "Steton HDD machine STETON S200 available through GRS Equipments India",
+    applications: [
+      "Municipal water and sewage trenchless installs",
+      "Telecom and power duct crossings",
+      "Oil & gas and industrial utility bores",
+      "Fleet upgrades for HDD contractors across India",
+    ],
+    highlights: [
+      {
+        title: "Clear STETON model ladder",
+        body: "Compare compact, mid and heavy STETON classes so your crew gets capacity without unnecessary complexity.",
+      },
+      {
+        title: "Parts and service pathway",
+        body: "GRS supports ongoing spare-parts and service conversations so Steton machines stay productive after delivery.",
+      },
+      {
+        title: "Project conversation first",
+        body: "Share bore length, diameter and ground notes — we recommend suitable Steton / STETON options before you shortlist.",
+      },
+    ],
+    specs: [
+      { label: "Brand focus", value: "STETON / Steton HDD machines" },
+      { label: "Example models", value: "S60 · S200 · S350 · S450 · S520 · S600A · S800A · S1350 · ST series" },
+      { label: "Support base", value: "Ghansoli showroom · Mahape warehouse" },
+      { label: "Contact", value: "grsequipments2023@gmail.com" },
+    ],
+    faqs: [
+      {
+        question: "Are Steton and STETON the same brand?",
+        answer:
+          "Yes — Steton / STETON refers to the same HDD equipment brand line presented on this site. GRS Equipments helps Indian buyers evaluate suitable models.",
+      },
+      {
+        question: "Which Steton HDD machine should I start with?",
+        answer:
+          "It depends on bore length, pipe/duct size and ground conditions. Contact GRS with those details for a practical shortlist from the STETON range.",
+      },
+    ],
+    relatedPaths: ["/hdd-machines-india", "/horizontal-directional-drilling-machines", "/products", "/contact"],
+    ctaNote: "Enquire about Steton HDD machines and request a model recommendation from GRS.",
   },
   {
     path: "/hdd-machine-parts",
@@ -278,7 +330,7 @@ export const seoPages: SeoPageContent[] = [
           "Share bore length, pipe OD, ground info and grade requirements — GRS will recommend a suitable STETON class.",
       },
     ],
-    relatedPaths: ["/horizontal-directional-drilling", "/cable-laying-machines", "/products", "/contact"],
+    relatedPaths: ["/horizontal-directional-drilling-machines", "/cable-laying-machines", "/products", "/contact"],
     ctaNote: "Enquire for a STETON pipe laying / HDD package sized to your pipeline job.",
   },
   {
@@ -434,7 +486,7 @@ export const seoPages: SeoPageContent[] = [
           "We can discuss machines alone or broader packages including mud systems, tools and spare-parts planning.",
       },
     ],
-    relatedPaths: ["/hdd-machines-india", "/horizontal-directional-drilling", "/products", "/contact"],
+    relatedPaths: ["/hdd-machines-india", "/steton-hdd-machines", "/horizontal-directional-drilling-machines", "/contact"],
     ctaNote: "Enquire now for STETON drilling machine options and pricing guidance.",
   },
 ]

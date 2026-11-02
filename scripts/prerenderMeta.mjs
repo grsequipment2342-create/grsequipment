@@ -9,24 +9,31 @@ const siteUrl = "https://www.grsequipment.in"
 const seoPages = [
   {
     path: "/",
-    title: "Steton HDD Machines India | Horizontal Directional Drilling Machines & Parts",
+    title: "GRS Equipment | Steton HDD Machines & Drilling Equipment India",
     description:
-      "Explore Steton HDD machines, horizontal directional drilling machines, pipe laying equipment, cable laying machines and HDD machine parts in India. Contact us for enquiries and quotations.",
+      "Explore HDD machines, Steton drilling equipment, horizontal directional drilling solutions, HDD machine spare parts, pipe laying and cable laying equipment at GRS Equipment, India.",
     h1: "Steton HDD Machines and Horizontal Directional Drilling Equipment in India",
   },
   {
     path: "/hdd-machines-india",
-    title: "HDD Machine in India | Best HDD Machine in India — STETON by GRS",
+    title: "HDD Machine in India | Best HDD Machine Options — GRS Equipments",
     description:
-      "Buy the best HDD machine in India from GRS Equipments — authorized STETON dealer for horizontal directional drilling machines, trenchless projects and after-sales support.",
-    h1: "Best HDD Machine in India — STETON Horizontal Directional Drilling",
+      "Explore HDD machines in India from GRS Equipments — STETON horizontal directional drilling machines for trenchless projects, with Navi Mumbai showroom support and pan-India coordination.",
+    h1: "HDD Machines in India for Trenchless Utility Projects",
   },
   {
-    path: "/horizontal-directional-drilling",
-    title: "Horizontal Directional Drilling Machine | STETON HDD by GRS India",
+    path: "/horizontal-directional-drilling-machines",
+    title: "Horizontal Directional Drilling Machines | GRS Equipments India",
     description:
-      "Horizontal directional drilling machines from STETON via GRS Equipments — trenchless HDD for pipe, cable and utility installation without open-cut disruption.",
+      "Horizontal directional drilling machines from GRS Equipments — STETON HDD solutions for trenchless pipe, cable and utility installation across India.",
     h1: "Horizontal Directional Drilling Machines for Trenchless Projects",
+  },
+  {
+    path: "/steton-hdd-machines",
+    title: "Steton HDD Machines India | STETON Drilling Equipment — GRS",
+    description:
+      "Explore Steton HDD machines and STETON drilling equipment at GRS Equipments India — model range, applications, parts support and enquiry options from Navi Mumbai.",
+    h1: "Steton HDD Machines and STETON Drilling Equipment in India",
   },
   {
     path: "/hdd-machine-parts",
@@ -72,15 +79,24 @@ const seoPages = [
   },
   {
     path: "/products",
-    title: "STETON HDD Products | GRS Equipments Catalog India",
-    description: "Browse STETON HDD machines, mud pumps and drill tools from GRS Equipments India.",
-    h1: "STETON HDD Product Catalog",
+    title: "HDD Machines & Drilling Equipment | GRS Equipment India",
+    description:
+      "Explore HDD drilling machines, directional drilling equipment and machinery solutions for telecom, infrastructure and underground cable installation.",
+    h1: "HDD Machines & Drilling Equipment",
+  },
+  {
+    path: "/about",
+    title: "About GRS Equipment | HDD Equipment Solutions India",
+    description:
+      "Learn about GRS Equipment, our business, equipment solutions and commitment to serving the drilling and infrastructure industry.",
+    h1: "About GRS Equipment",
   },
   {
     path: "/contact",
-    title: "Contact GRS Equipments | STETON HDD Dealer Navi Mumbai",
-    description: "Contact GRS Equipments for STETON HDD machines and parts in Navi Mumbai.",
-    h1: "Contact GRS Equipments",
+    title: "Contact GRS Equipment | HDD Machines & Parts Mumbai",
+    description:
+      "Contact GRS Equipment for enquiries about HDD machines, drilling equipment, spare parts and infrastructure equipment solutions.",
+    h1: "Contact GRS Equipment",
   },
 ]
 
@@ -122,7 +138,7 @@ function injectMeta(html, page) {
       <main style="max-width:72rem;margin:2rem auto;padding:0 1rem;font-family:system-ui,sans-serif">
         <h1>${escapeHtml(page.h1)}</h1>
         <p>${escapeHtml(page.description)}</p>
-        <p><a href="${siteUrl}/products">View STETON products</a> · <a href="${siteUrl}/contact">Contact GRS Equipments</a></p>
+        <p><a href="${siteUrl}/products">View products</a> · <a href="${siteUrl}/contact">Contact GRS Equipment</a></p>
       </main>
     </noscript>`
 
