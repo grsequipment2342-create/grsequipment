@@ -34,7 +34,7 @@ export function SiteFooter() {
 
   return (
     <footer ref={footerRef} className="bg-ink text-white pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 lg:grid-cols-5 lg:px-6">
         <div className="footer-col">
           <div className="font-display text-xl font-bold tracking-wide">GRS Equipments</div>
           <p className="mt-2 text-sm text-white/65">
@@ -50,10 +50,26 @@ export function SiteFooter() {
             <Link to="/knowledge" className="rounded-sm border border-white/20 px-3 py-1.5 text-[11px] uppercase tracking-wide hover:border-brand hover:text-brand-light">
               HDD Guide
             </Link>
-            <Link to="/news" className="rounded-sm border border-white/20 px-3 py-1.5 text-[11px] uppercase tracking-wide hover:border-brand hover:text-brand-light">
-              News
+            <Link to="/hdd-machines-india" className="rounded-sm border border-white/20 px-3 py-1.5 text-[11px] uppercase tracking-wide hover:border-brand hover:text-brand-light">
+              HDD India
+            </Link>
+            <Link to="/hdd-machine-parts" className="rounded-sm border border-white/20 px-3 py-1.5 text-[11px] uppercase tracking-wide hover:border-brand hover:text-brand-light">
+              Parts
             </Link>
           </div>
+        </div>
+
+        <div className="footer-col">
+          <h3 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white/50">SEO Guides</h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/75">
+            <li><Link to="/hdd-machines-india" className="hover:text-brand-light">HDD Machines India</Link></li>
+            <li><Link to="/horizontal-directional-drilling" className="hover:text-brand-light">Horizontal Directional Drilling</Link></li>
+            <li><Link to="/hdd-machines-mumbai" className="hover:text-brand-light">HDD Near Mumbai</Link></li>
+            <li><Link to="/pipe-laying-machines" className="hover:text-brand-light">Pipe Laying Machines</Link></li>
+            <li><Link to="/cable-laying-machines" className="hover:text-brand-light">Cable Laying Machines</Link></li>
+            <li><Link to="/telecom-hdd-machines" className="hover:text-brand-light">Telecom HDD</Link></li>
+            <li><Link to="/drilling-machines" className="hover:text-brand-light">Drilling Machines</Link></li>
+          </ul>
         </div>
 
         <div className="footer-col">

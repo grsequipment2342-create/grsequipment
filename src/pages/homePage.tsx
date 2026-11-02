@@ -6,13 +6,13 @@ import { Reveal } from "@/components/animations/reveal"
 import { StaggerChildren } from "@/components/animations/staggerChildren"
 import { ProcessStrip } from "@/components/home/processStrip"
 import { ProductCard } from "@/components/products/productCard"
+import { ReviewsSection } from "@/components/reviews/reviewsSection"
 import { company } from "@/data/company"
 import {
   applications,
   galleryPhotos,
   hddCharacteristics,
   newsItems,
-  testimonials,
 } from "@/data/content"
 import { products } from "@/data/products"
 import { useGSAP } from "@gsap/react"
@@ -172,11 +172,11 @@ export function HomePage() {
         <div className="hero-brand-bar absolute inset-x-0 bottom-0 z-10">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 pb-4 pt-3 safe-px sm:flex-row sm:items-end sm:justify-between sm:pb-5 lg:px-6">
             <div className="max-w-md text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
-              <h1 className="font-display text-[9px] font-semibold uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.26em] md:text-xs">
-                GRS Equipments · Best HDD Machine · STETON / Steton
-              </h1>
+              <p className="font-display text-[9px] font-semibold uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.26em] md:text-xs">
+                GRS Equipments · STETON / Steton · India
+              </p>
               <p className="mt-1 text-[11px] leading-snug text-white/95 sm:text-xs md:text-sm">
-                Authorized STETON / Steton HDD machine dealer — Navi Mumbai, India
+                Authorized HDD machine dealer — Navi Mumbai showroom &amp; pan-India support
               </p>
             </div>
             <div className="flex w-full flex-wrap gap-2 sm:w-auto">
@@ -198,6 +198,45 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-line bg-paper py-10 sm:py-12">
+        <div className="mx-auto max-w-7xl px-4 safe-px lg:px-6">
+          <h1 className="max-w-4xl font-display text-[clamp(1.35rem,3.8vw,2.35rem)] font-bold leading-tight tracking-wide text-ink">
+            Steton HDD Machines and Horizontal Directional Drilling Equipment in India
+          </h1>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft sm:text-base">
+            GRS Equipments is the India authorized dealer for STETON / Steton horizontal directional drilling machines.
+            Explore HDD machines, pipe laying and cable laying solutions, telecom trenchless packages, and HDD machine
+            parts — with showroom support from Navi Mumbai and quotations for projects nationwide.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Link to="/hdd-machines-india" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              HDD Machines India
+            </Link>
+            <Link to="/horizontal-directional-drilling" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Horizontal Directional Drilling
+            </Link>
+            <Link to="/hdd-machine-parts" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              HDD Machine Parts
+            </Link>
+            <Link to="/hdd-machines-mumbai" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Near Mumbai
+            </Link>
+            <Link to="/pipe-laying-machines" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Pipe Laying
+            </Link>
+            <Link to="/cable-laying-machines" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Cable Laying
+            </Link>
+            <Link to="/telecom-hdd-machines" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Telecom HDD
+            </Link>
+            <Link to="/drilling-machines" className="rounded-sm border border-line px-3 py-1.5 text-xs font-semibold hover:border-brand hover:text-brand">
+              Drilling Machines
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="border-b border-line bg-paper py-10 sm:py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 safe-px lg:px-6">
           <Reveal>
@@ -205,7 +244,7 @@ export function HomePage() {
               <div className="flex items-center gap-3">
                 <span className="h-7 w-1 shrink-0 bg-brand sm:h-8" aria-hidden />
                 <h2 className="font-display text-lg font-bold uppercase tracking-[0.12em] text-ink sm:text-xl sm:tracking-[0.14em] md:text-2xl">
-                  Best HDD Machine — STETON / Steton
+                  STETON HDD Product Range
                 </h2>
               </div>
               <Link
@@ -272,6 +311,8 @@ export function HomePage() {
           </StaggerChildren>
         </div>
       </section>
+
+      <ReviewsSection />
 
       <section className="bg-surface py-14">
         <div className="mx-auto max-w-7xl px-4 lg:px-6">
@@ -398,36 +439,6 @@ export function HomePage() {
                 <p className="mt-1 text-xs text-muted">{item.zh}</p>
                 <p className="mt-3 text-sm text-ink-soft">{item.body}</p>
               </div>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      <section className="bg-paper py-16">
-        <div className="mx-auto max-w-7xl px-4 lg:px-6">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <h2 className="section-title text-2xl">Happy Customers</h2>
-                <p className="mt-2 text-sm text-muted">India contractors on support & service</p>
-              </div>
-              <Link to="/about" className="text-sm font-semibold uppercase tracking-wide text-brand hover:underline">
-                About GRS →
-              </Link>
-            </div>
-          </Reveal>
-          <StaggerChildren className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
-            {testimonials.slice(0, 6).map((item) => (
-              <blockquote key={item.name} className="h-full border border-line border-l-4 border-l-brand bg-surface p-5">
-                <p className="text-sm leading-relaxed text-ink-soft">“{item.quote}”</p>
-                <footer className="mt-4">
-                  <div className="text-sm font-bold">{item.name}</div>
-                  <div className="text-xs text-muted">
-                    {item.company} · {item.place}
-                  </div>
-                  <div className="mt-1 text-[11px] uppercase tracking-wide text-brand">{item.machines}</div>
-                </footer>
-              </blockquote>
             ))}
           </StaggerChildren>
         </div>

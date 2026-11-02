@@ -10,6 +10,8 @@ import { NewsPage } from "@/pages/newsPage"
 import { ProductDetailPage } from "@/pages/productDetailPage"
 import { ProductsPage } from "@/pages/productsPage"
 import { ServicePage } from "@/pages/servicePage"
+import { SeoLandingPage } from "@/pages/seoLandingPage"
+import { seoPagePaths } from "@/data/seoPages"
 import { useState } from "react"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
@@ -41,6 +43,9 @@ export default function App() {
             <Route path="news" element={<NewsPage />} />
             <Route path="download" element={<DownloadPage />} />
             <Route path="contact" element={<ContactPage />} />
+            {seoPagePaths.map((path) => (
+              <Route key={path} path={path.slice(1)} element={<SeoLandingPage />} />
+            ))}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

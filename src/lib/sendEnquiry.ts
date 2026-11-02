@@ -12,9 +12,11 @@ type EnquiryResult =
   | { ok: true }
   | { ok: false; error: string }
 
+const ENQUIRY_INBOX = "grsequipments2023@gmail.com"
+
 /** Sends enquiry to GRS inbox via FormSubmit (no backend required). */
 export async function sendEnquiry(values: EnquiryPayload): Promise<EnquiryResult> {
-  const to = company.email
+  const to = ENQUIRY_INBOX
 
   try {
     const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, {

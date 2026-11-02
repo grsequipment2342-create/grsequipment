@@ -1,5 +1,6 @@
 import { company } from "@/data/company"
 import { products } from "@/data/products"
+import { getSeoPageByPath } from "@/data/seoPages"
 import { DEFAULT_OG_IMAGE, SITE_BRAND, SITE_NAME, SITE_URL } from "@/lib/siteConfig"
 
 type JsonLdPrimitive = string | number | boolean | null
@@ -21,11 +22,11 @@ const brandKeywords =
   "HDD machine, Best HDD machine, Best HDD machine India, STETON, Steton, STETON HDD, STETON HDD machine, GRS Equipments, GRS Equipments and Services, GRS Equipment, STETON India, 思特通, horizontal directional drilling, HDD machine India, trenchless drilling Navi Mumbai, HDD rig dealer India"
 
 export const defaultSeo: PageSeoConfig = {
-  title: `${SITE_NAME} | Best HDD Machine — STETON / Steton India Dealer`,
+  title: "Steton HDD Machines India | Horizontal Directional Drilling Machines & Parts",
   description:
-    "Looking for the best HDD machine in India? GRS Equipments is the authorized STETON / Steton dealer for horizontal directional drilling machines — HDD machine sales, mud pumps, tooling and trenchless support from Navi Mumbai.",
+    "Explore Steton HDD machines, horizontal directional drilling machines, pipe laying equipment, cable laying machines and HDD machine parts in India. Contact GRS Equipments for enquiries and quotations.",
   path: "/",
-  keywords: brandKeywords,
+  keywords: "Steton, Steton HDD Machine, HDD machines India, GRS Equipments, horizontal directional drilling",
   image: DEFAULT_OG_IMAGE,
   type: "website",
 }
@@ -34,7 +35,7 @@ const staticPages: Record<string, Omit<PageSeoConfig, "path">> = {
   "/": {
     title: defaultSeo.title,
     description: defaultSeo.description,
-    keywords: brandKeywords,
+    keywords: defaultSeo.keywords,
   },
   "/about": {
     title: `About ${SITE_NAME} | India Authorized ${SITE_BRAND} Dealer`,
@@ -81,7 +82,7 @@ const staticPages: Record<string, Omit<PageSeoConfig, "path">> = {
   "/contact": {
     title: `Contact ${SITE_NAME} | ${SITE_BRAND} HDD Dealer Navi Mumbai`,
     description:
-      "Contact GRS Equipments for STETON HDD machines — Show Room Sector-16 Ghansoli, Navi Mumbai. Call +91 8655886888 / 8922805992 or email info@grsequipment.in.",
+      "Contact GRS Equipments for STETON HDD machines — Show Room Sector-16 Ghansoli, Navi Mumbai. Call +91 8655886888 / 8922805992 or email grsequipments2023@gmail.com.",
     keywords: `${brandKeywords}, GRS Equipments contact, STETON dealer Navi Mumbai, Ghansoli HDD`,
   },
 }
@@ -224,6 +225,55 @@ export function resolvePageSeo(pathname: string): PageSeoConfig {
   }
 
   const normalized = pathname.replace(/\/$/, "") || "/"
+  const seoLanding = getSeoPageByPath(normalized)
+  if (seoLanding) {
+    return {
+      title: seoLanding.title,
+      description: seoLanding.description,
+      path: seoLanding.path,
+      keywords: seoLanding.keywords,
+      image: absoluteUrl(seoLanding.image),
+      type: "article",
+      jsonLd: [
+        organizationJsonLd(),
+        websiteJsonLd(),
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: seoLanding.h1,
+          description: seoLanding.description,
+          url: absoluteUrl(seoLanding.path),
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: seoLanding.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: seoLanding.h1,
+              item: absoluteUrl(seoLanding.path),
+            },
+          ],
+        },
+      ],
+    }
+  }
+
   const page = staticPages[normalized] ?? {
     title: defaultSeo.title,
     description: defaultSeo.description,

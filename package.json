@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/prerenderMeta.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^6.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "firebase": "^13.2.0",
     "gsap": "^3.15.0",
     "lucide-react": "^1.62.0",
     "react": "^19.3.1",

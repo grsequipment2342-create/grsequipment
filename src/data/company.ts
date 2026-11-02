@@ -8,10 +8,10 @@ export const company = {
   gstin: "27AAYFG9792R1ZQ",
   website: "www.grsequipment.in",
   phones: ["8655886888", "8922805992"],
-  email: "info@grsequipment.in",
+  email: "grsequipments2023@gmail.com",
   emails: {
-    sales: "info@grsequipment.in",
-    service: "info@grsequipment.in",
+    sales: "grsequipments2023@gmail.com",
+    service: "grsequipments2023@gmail.com",
   },
   hours: {
     weekdays: "Mon – Sat 8:00 – 18:00",

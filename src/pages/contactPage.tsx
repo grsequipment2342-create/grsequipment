@@ -216,7 +216,7 @@ export function ContactPage() {
               </Button>
               {submitted ? (
                 <p className="mt-3 text-sm font-medium text-ink-soft">
-                  Thanks — your enquiry was sent to {company.email}. We will get back to you shortly.
+                  Thanks — your enquiry was sent to grsequipments2023@gmail.com. We will get back to you shortly.
                 </p>
               ) : null}
               {submitError ? <p className="mt-3 text-sm font-medium text-brand">{submitError}</p> : null}
