@@ -100,7 +100,7 @@ function organizationJsonLd(): JsonLdObject {
     name: company.legalName,
     alternateName: ["GRS Equipments", "GRS Equipments and Services", "GRS Equipment", "STETON India Dealer"],
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.svg`,
+    logo: `${SITE_URL}/favicon-512.png`,
     image: DEFAULT_OG_IMAGE,
     email: company.email,
     telephone: company.phones.map((p) => `+91${p}`),
